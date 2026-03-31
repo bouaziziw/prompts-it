@@ -7,7 +7,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "prompt-hub-frontend": {
+    "prompts-it-frontend": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -30,7 +30,9 @@
                 "input": "public"
               }
             ],
-            "styles": ["src/styles.scss"]
+            "styles": [
+              "src/styles.scss"
+            ]
           },
           "configurations": {
             "production": {
@@ -66,10 +68,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "prompt-hub-frontend:build:production"
+              "buildTarget": "prompts-it-frontend:build:production"
             },
             "development": {
-              "buildTarget": "prompt-hub-frontend:build:development"
+              "buildTarget": "prompts-it-frontend:build:development"
             }
           },
           "defaultConfiguration": "development"

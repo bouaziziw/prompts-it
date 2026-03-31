@@ -23,4 +23,4 @@ npm run start:auth     # avec auth
 
 Le frontend Angular (port 4200) consomme cette API ; lancer les deux pour développer.
 
-**Frontend :** [prompt-hub-frontend](https://github.com/GaetanRouzies/prompt-hub-frontend)
+**Frontend :** [prompts-it-frontend](https://github.com/GaetanRouzies/prompts-it-frontend)

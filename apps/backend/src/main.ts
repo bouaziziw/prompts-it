@@ -4,11 +4,23 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import cookieParser from 'cookie-parser';
 import { AppModule } from './app.module';
 
+const getAllowedOrigins = (): string[] => {
+  const envOrigins = process.env.CORS_ORIGINS?.split(',')
+    .map(origin => origin.trim())
+    .filter(Boolean);
+
+  if (envOrigins && envOrigins.length > 0) {
+    return envOrigins;
+  }
+
+  return ['http://localhost:4200', 'http://localhost:4300'];
+};
+
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.use(cookieParser());
   app.enableCors({
-    origin: ['http://localhost:4200', 'http://localhost:4300'],
+    origin: getAllowedOrigins(),
     credentials: true,
   });
   app.useGlobalPipes(new ValidationPipe({ whitelist: true }));
