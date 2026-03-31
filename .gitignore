@@ -1,0 +1,130 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Dependency directories
+node_modules/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# dotenv environment variables file
+.env
+.env.test
+.env.production
+.env.local
+
+# next.js build output
+.next
+out
+
+# nuxt.js build output
+.nuxt
+
+# vuepress build output
+.vuepress/dist
+
+# serverless directories
+.serverless/
+
+# Vercel
+.vercel
+
+# FuseBox cache
+.fusebox/
+
+# DynamoDB Local files
+.dynamodb/
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Angular
+.angular/
+apps/frontend/dist/
+
+# NestJS
+apps/backend/dist/
+*.tsbuildinfo
+
+.history/
+
+# Compiled output
+apps/frontend/dist
+apps/backend/dist
+apps/frontend/tmp
+apps/frontend/out-tsc
+apps/frontend/bazel-out
+
+# Node
+apps/frontend/node_modules
+apps/backend/node_modules
+
+# IDEs and editors
+apps/frontend/.idea/
+apps/backend/.idea/
+apps/frontend/.project
+apps/backend/.project
+apps/frontend/.classpath
+apps/backend/.classpath
+apps/frontend/.c9/
+apps/backend/.c9/
+apps/frontend/*.launch
+apps/backend/*.launch
+apps/frontend/.settings/
+apps/backend/.settings/
+apps/frontend/*.sublime-workspace
+apps/backend/*.sublime-workspace
+
+# Visual Studio Code
+apps/frontend/.vscode/*
+apps/backend/.vscode/*
+apps/frontend/.vscode/settings.json
+apps/backend/.vscode/settings.json
+apps/frontend/.vscode/tasks.json
+apps/backend/.vscode/tasks.json
+apps/frontend/.vscode/launch.json
+apps/backend/.vscode/launch.json
+apps/frontend/.vscode/extensions.json
+apps/backend/.vscode/extensions.json
+apps/frontend/.vscode/mcp.json
+apps/backend/.vscode/mcp.json
+apps/frontend/.history/*
+apps/backend/.history/*
+
+# Miscellaneous
+/.angular/cache
+.sass-cache/
+/connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+__screenshots__/
+
+# System files
+.DS_Store
+Thumbs.db

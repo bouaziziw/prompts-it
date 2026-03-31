@@ -1,0 +1,62 @@
+<p-card>
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="field">
+      <label for="title">Titre</label>
+      <input id="title" type="text" pInputText class="w-full" formControlName="title" />
+      @if (form.get('title')?.invalid && form.get('title')?.touched) {
+        <small class="invalid-feedback">Title is required (Max 30).</small>
+      }
+    </div>
+    <div class="field">
+      <label for="content">Contenu</label>
+      <textarea
+        id="content"
+        rows="5"
+        pInputTextarea
+        class="w-full"
+        formControlName="content"
+        rows="3"
+      ></textarea>
+      @if (form.get('content')?.invalid && form.get('content')?.touched) {
+        <small class="invalid-feedback">Content is required.</small>
+      }
+    </div>
+    <div class="field">
+      <label for="category">Catégorie</label>
+      <p-select
+        inputId="category"
+        class="w-full"
+        placeholder="Select a category"
+        [options]="categories()"
+        optionLabel="name"
+        optionValue="id"
+        formControlName="categoryId"
+      />
+      @if (form.get('categoryId')?.invalid && form.get('categoryId')?.touched) {
+        <small class="invalid-feedback">Category is required.</small>
+      }
+    </div>
+    <div class="field flex align-content-end justify-content-end">
+      @if (promptId()) {
+        <p-button
+          type="button"
+          routerLink="/"
+          label="Supprimer"
+          [outlined]="true"
+          class="mr-auto"
+          severity="danger"
+          (onClick)="deletePrompt()"
+        />
+      }
+
+      <p-button
+        type="submit"
+        routerLink="/"
+        label="Annuler"
+        class="p-button-outlined mr-2"
+        severity="secondary"
+      />
+      <p-button type="submit" [label]="promptId() ? 'Modifier' : 'Créer'" />
+    </div>
+  </form>
+</p-card>

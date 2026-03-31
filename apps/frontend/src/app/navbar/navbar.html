@@ -1,0 +1,43 @@
+<header class="nav-shadow p-3 mb-4">
+  <div class="container flex justify-content-between align-items-center">
+    <a routerLink="/" class="nav-logo flex justify-content align-items-center gap-2 cursor-pointer">
+      <img src="/logo-prompt-hub.png" alt="PromptHub Logo" width="32" height="32" />
+      Prompt IT
+    </a>
+    <div class="flex align-items-center">
+      @if (authService.currentUser(); as currentUser) {
+        <small class="text-sm">{{ currentUser.username }}</small>
+        <p-button
+          label="Deconnexion"
+          size="small"
+          severity="secondary"
+          class="p-button-sm"
+          (onClick)="logout()"
+        />
+      } @else {
+        <p-button
+          label="Connexion"
+          size="small"
+          severity="secondary"
+          class="p-button-sm"
+          routerLink="/auth"
+        />
+      }
+      <!-- <p-button [icon]="isDarkMode() ? 'pi pi-sun' : 'pi pi-moon'" size="small" severity="secondary"
+        class="p-button-outlined p-button-sm" (onClick)="toggleDarkMode()" /> -->
+      <p-button
+        label="Ajouter"
+        icon="pi pi-plus"
+        size="small"
+        class="p-button-outlined p-button-sm"
+        routerLink="/prompts/create"
+      />
+    </div>
+    <!-- <nav>
+        <ul class="flex gap-4">
+          <li><a routerLink="/prompts" class="text-lg">Prompts</a></li>
+          <li><a routerLink="/create" class="text-lg">Create Prompt</a></li>
+        </ul>
+      </nav> -->
+  </div>
+</header>

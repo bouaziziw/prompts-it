@@ -1,0 +1,11 @@
+.p-inputtext.ng-invalid.ng-touched,
+.p-textarea.ng-invalid.ng-touched,
+.p-select.ng-invalid.ng-touched {
+  border-color: var(--p-inputtext-invalid-border-color, var(--p-error-600));
+}
+
+.invalid-feedback {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}

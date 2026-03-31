@@ -1,0 +1,47 @@
+<p-card [header]="mode() == 'login' ? 'Connexion' : 'Inscription'">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="field">
+      <label for="username">Email</label>
+      <input id="username" type="text" pInputText formControlName="username" class="w-full" />
+      <!-- @if (form.get('username')?.invalid && form.get('username')?.touched) {
+            <small class="p-error">Email est requis</small>
+            }
+            @if (form.get('username')?.invalid && form.get('username')?.touched) {
+            <small class="p-error">Email invalide</small>   
+            } -->
+    </div>
+    <div class="field">
+      <label for="password">Mot de passe</label>
+      <input id="password" type="password" pInputText formControlName="password" class="w-full" />
+      <!-- @if(form.get('password')?.invalid && form.get('password')?.touched) {
+            <small class="p-error">Mot de passe est requis</small>
+            }
+            @if(form.get('password')?.invalid && form.get('password')?.touched) {
+            <small class="p-error">Mot de passe doit contenir au moins 6 caractères</small>         
+            } -->
+    </div>
+    <div class="field flex justify-content-end">
+      <p-button
+        (onClick)="toggleMode()"
+        [label]="mode() === 'login' ? 'S\'inscrire' : 'Se connecter'"
+        [size]="'small'"
+        severity="secondary"
+        class="p-mt-2 mr-2"
+      ></p-button>
+      <p-button
+        type="submit"
+        [label]="mode() === 'login' ? 'Se connecter' : 'S\'inscrire'"
+        [size]="'small'"
+        class="p-mt-2"
+        [disabled]="form.invalid"
+      ></p-button>
+    </div>
+  </form>
+  <p class="p-mt-2">
+    <a href="#" (click)="toggleMode()">
+      {{
+        mode() === 'login' ? 'Pas de compte ? Inscrivez-vous' : 'Déjà un compte ? Connectez-vous'
+      }}
+    </a>
+  </p>
+</p-card>
